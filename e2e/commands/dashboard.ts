@@ -49,7 +49,7 @@ export async function reset(page: Page) {
 
     // remove all personas
     while (true) {
-        const settingIcon = await page.$('[data-testid="persona_setting_icon"]')
+        const settingIcon = await page.$('[data-testid="setting_icon"]')
 
         if (settingIcon) {
             // click cog icon
@@ -57,12 +57,12 @@ export async function reset(page: Page) {
             await page.waitFor(500)
 
             // click the delete button
-            const deleteButton = await page.waitFor('[data-testid="persona_delete_button"]')
+            const deleteButton = await page.waitFor('[data-testid="delete_button"]')
             await deleteButton.click()
             await page.waitFor(500)
 
             // click the confirm button
-            const confirmButton = await page.waitFor('[data-testid="dialog_confirm_button"]')
+            const confirmButton = await page.waitFor('[data-testid="confirm_button"]')
             await confirmButton.click()
             await page.waitFor(500)
         } else {
